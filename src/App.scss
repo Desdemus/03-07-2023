@@ -1,41 +1,55 @@
-// @import "./scss/variables/colors.scss";
-
+@import "./scss/typography/all.scss";
+@import "./scss/layouts/all.scss";
+@import "./scss/helpers/all.scss";
 body {
+  margin: 0px;
   font-size: 16px;
+  @include size(100vw, 100vh);
 }
 
+h1 {
+  font-size: $heading1;
+  font-family: $fontPrimary;
+}
 .container {
-  position: relative;
-  // background-color: $colorBackground;
+  @include size(100vw, 100px);
   @include flexbox();
-  @include justify-content(center);
   @include align-items(center);
-
-  // .element {
-  //   @include centerPosition();
-  //   @include size(100%, 40px);
-  //   background-color: yellow;
-  // }
-
-  // ul {
-  //   color: $colorText;
-  //   margin: $margin;
-  // }
-}
-
-ul {
-  color: yellow;
-  font-size: 11px;
+  background-color: colorShader($colorBg3, 20%);
 }
 
 li {
-  font-size: rem(37px);
+  font-size: rem(18px);
+  @include listnone;
+  font-family: $fontSecondary;
+}
+.NavBar {
+  @include flexbox();
+  @include size(100vw, 25px);
+  gap: 20px;
 }
 
 .wrapper {
   position: relative;
   width: 100vw;
   height: 100vh;
+
+  .row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    &.space-between {
+      justify-content: space-between;
+    }
+  }
+
+  .row-g {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 10px;
+  }
 
   @include xs {
     background: purple;
