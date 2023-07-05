@@ -31,3 +31,25 @@
 @mixin listnone() {
   list-style-type: none;
 }
+
+@mixin buttonFill($theme) {
+  @if ($theme == "outline") {
+    background-color: $colorText4;
+    border-color: $none;
+    color: $dark;
+  } @else {
+    background-color: $cyandark;
+    border-color: $none;
+    color: $light;
+  }
+}
+
+@mixin buttonSize($size) {
+  @if $size == "xl" {
+    padding: rem($p-sm) rem($p-xl);
+  } @else if $size == "sm" {
+    padding: rem($p-sm) rem($p-sm);
+  } @else {
+    padding: rem($p-sm) rem($p-md);
+  }
+}
