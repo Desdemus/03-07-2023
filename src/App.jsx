@@ -1,11 +1,12 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import "./App.scss"
-import './App.css'
-
+import { useState } from "react";
+import "./App.css";
+import "./App.scss";
+import { Button } from "./components/buttons";
 function App() {
-
+  const [isButtonXl, setIsButtonXl] = useState(false);
+  const toggleButtonXl = () => {
+    setIsButtonXl(!isButtonXl);
+  };
   //this will be a component
   return (
     <>
@@ -92,6 +93,17 @@ function App() {
         </div>
       </div>
 
+      <div className="Button_box" onClick={() => toggleButtonXl()}>
+        <Button label="go to" icon iconLeft size="sm" square />
+      </div>
+      <div>
+        <Button label="go to" icon outline size="md" />
+      </div>
+      {isButtonXl && (
+        <div>
+          <Button label="go to" outline size="xl" />
+        </div>
+      )}
     </>
   )
 }

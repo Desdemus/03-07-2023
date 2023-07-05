@@ -16,8 +16,12 @@ export default defineConfig({
           @import "./src/scss/helpers/mixins.scss";
           @import "./src/scss/helpers/devices.scss";
           @import "./src/scss/helpers/fn.scss";
+          @import "./src/scss/variables/layout.scss";
+          
         `,
       },
     },
   },
 });
+
+
